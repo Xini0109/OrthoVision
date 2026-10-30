@@ -1,0 +1,221 @@
+{
+  "weights": "D:\\医学人工智能\\project\\OrthoVision\\weights\\orthovision_yolo11s.pt",
+  "split": "test",
+  "conf": 0.15,
+  "iou": 0.45,
+  "imgsz": 640,
+  "device": "cuda:0",
+  "max_images": "all",
+  "conditions": {
+    "original": {
+      "box": {
+        "tp": 50,
+        "fp": 61,
+        "fn": 77,
+        "precision": 0.4505,
+        "recall": 0.3937,
+        "f1": 0.4202
+      },
+      "image_level": {
+        "tp": 64,
+        "fp": 10,
+        "fn": 43,
+        "tn": 486,
+        "sensitivity": 0.5981,
+        "specificity": 0.9798,
+        "accuracy": 0.9121,
+        "precision_ppv": 0.8649,
+        "npv": 0.9187,
+        "f1": 0.7072
+      },
+      "latency_ms": {
+        "mean": 13.92,
+        "p50": 10.37,
+        "p95": 46.04
+      },
+      "mean_max_conf_positive": 0.5389,
+      "mAP50": 0.363,
+      "mAP50_95": 0.1387
+    },
+    "blur_mild": {
+      "box": {
+        "tp": 53,
+        "fp": 58,
+        "fn": 74,
+        "precision": 0.4775,
+        "recall": 0.4173,
+        "f1": 0.4454
+      },
+      "image_level": {
+        "tp": 66,
+        "fp": 15,
+        "fn": 41,
+        "tn": 481,
+        "sensitivity": 0.6168,
+        "specificity": 0.9698,
+        "accuracy": 0.9071,
+        "precision_ppv": 0.8148,
+        "npv": 0.9215,
+        "f1": 0.7021
+      },
+      "latency_ms": {
+        "mean": 55.44,
+        "p50": 49.28,
+        "p95": 96.71
+      },
+      "mean_max_conf_positive": 0.4897,
+      "mAP50": 0.3691,
+      "mAP50_95": 0.1317
+    },
+    "blur_moderate": {
+      "box": {
+        "tp": 24,
+        "fp": 30,
+        "fn": 103,
+        "precision": 0.4444,
+        "recall": 0.189,
+        "f1": 0.2652
+      },
+      "image_level": {
+        "tp": 32,
+        "fp": 8,
+        "fn": 75,
+        "tn": 488,
+        "sensitivity": 0.2991,
+        "specificity": 0.9839,
+        "accuracy": 0.8624,
+        "precision_ppv": 0.8,
+        "npv": 0.8668,
+        "f1": 0.4354
+      },
+      "latency_ms": {
+        "mean": 43.76,
+        "p50": 42.88,
+        "p95": 92.33
+      },
+      "mean_max_conf_positive": 0.4399,
+      "mAP50": 0.2098,
+      "mAP50_95": 0.0738
+    },
+    "brightness_-30": {
+      "box": {
+        "tp": 34,
+        "fp": 52,
+        "fn": 93,
+        "precision": 0.3953,
+        "recall": 0.2677,
+        "f1": 0.3192
+      },
+      "image_level": {
+        "tp": 50,
+        "fp": 15,
+        "fn": 57,
+        "tn": 481,
+        "sensitivity": 0.4673,
+        "specificity": 0.9698,
+        "accuracy": 0.8806,
+        "precision_ppv": 0.7692,
+        "npv": 0.8941,
+        "f1": 0.5814
+      },
+      "latency_ms": {
+        "mean": 17.41,
+        "p50": 12.92,
+        "p95": 42.71
+      },
+      "mean_max_conf_positive": 0.4635,
+      "mAP50": 0.2588,
+      "mAP50_95": 0.0945
+    },
+    "brightness_+30": {
+      "box": {
+        "tp": 46,
+        "fp": 47,
+        "fn": 81,
+        "precision": 0.4946,
+        "recall": 0.3622,
+        "f1": 0.4182
+      },
+      "image_level": {
+        "tp": 54,
+        "fp": 11,
+        "fn": 53,
+        "tn": 485,
+        "sensitivity": 0.5047,
+        "specificity": 0.9778,
+        "accuracy": 0.8939,
+        "precision_ppv": 0.8308,
+        "npv": 0.9015,
+        "f1": 0.6279
+      },
+      "latency_ms": {
+        "mean": 17.88,
+        "p50": 14.16,
+        "p95": 44.99
+      },
+      "mean_max_conf_positive": 0.5049,
+      "mAP50": 0.3244,
+      "mAP50_95": 0.1213
+    },
+    "contrast_0.7": {
+      "box": {
+        "tp": 49,
+        "fp": 54,
+        "fn": 78,
+        "precision": 0.4757,
+        "recall": 0.3858,
+        "f1": 0.4261
+      },
+      "image_level": {
+        "tp": 64,
+        "fp": 12,
+        "fn": 43,
+        "tn": 484,
+        "sensitivity": 0.5981,
+        "specificity": 0.9758,
+        "accuracy": 0.9088,
+        "precision_ppv": 0.8421,
+        "npv": 0.9184,
+        "f1": 0.6995
+      },
+      "latency_ms": {
+        "mean": 51.97,
+        "p50": 48.08,
+        "p95": 88.18
+      },
+      "mean_max_conf_positive": 0.5033,
+      "mAP50": 0.3706,
+      "mAP50_95": 0.1324
+    },
+    "noise_sigma12": {
+      "box": {
+        "tp": 22,
+        "fp": 105,
+        "fn": 105,
+        "precision": 0.1732,
+        "recall": 0.1732,
+        "f1": 0.1732
+      },
+      "image_level": {
+        "tp": 52,
+        "fp": 44,
+        "fn": 55,
+        "tn": 452,
+        "sensitivity": 0.486,
+        "specificity": 0.9113,
+        "accuracy": 0.8358,
+        "precision_ppv": 0.5417,
+        "npv": 0.8915,
+        "f1": 0.5123
+      },
+      "latency_ms": {
+        "mean": 54.0,
+        "p50": 48.72,
+        "p95": 101.06
+      },
+      "mean_max_conf_positive": 0.4055,
+      "mAP50": 0.1099,
+      "mAP50_95": 0.042
+    }
+  }
+}
