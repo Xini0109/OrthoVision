@@ -1,0 +1,35 @@
+{
+  "split": "test",
+  "counts": {
+    "TP": 65,
+    "FP": 13,
+    "FN": 42,
+    "TN": 483
+  },
+  "missed_lesion_area": {
+    "n": 47,
+    "median_pct": 0.457,
+    "mean_pct": 0.763,
+    "min_pct": 0.075,
+    "max_pct": 3.669,
+    "share_below_1pct": 0.766
+  },
+  "detected_lesion_area": {
+    "n": 80,
+    "median_pct": 0.39,
+    "mean_pct": 0.749,
+    "min_pct": 0.11,
+    "max_pct": 5.295,
+    "share_below_1pct": 0.863
+  },
+  "false_positive_confidence": {
+    "n": 13,
+    "median": 0.2577,
+    "mean": 0.3323,
+    "share_below_0.5": 0.769
+  },
+  "false_positive_boxes_per_image": {
+    "median": 1,
+    "max": 1
+  }
+}
