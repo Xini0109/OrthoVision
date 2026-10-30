@@ -1,0 +1,57 @@
+{
+  "weights": "D:\\医学人工智能\\project\\OrthoVision\\weights\\orthovision_yolo11s.pt",
+  "split": "test",
+  "conf": 0.15,
+  "nms_iou": 0.45,
+  "match_iou": 0.5,
+  "imgsz": 640,
+  "device": "cuda:0",
+  "torch": "2.14.1+cu126",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "coco_map": {
+    "mAP50": 0.3747,
+    "mAP50_95": 0.1415,
+    "precision": 0.6165,
+    "recall": 0.3671
+  },
+  "box_level": {
+    "tp": 51,
+    "fp": 63,
+    "fn": 76,
+    "precision": 0.4474,
+    "recall": 0.4016,
+    "f1": 0.4232
+  },
+  "image_level": {
+    "tp": 65,
+    "fp": 13,
+    "fn": 42,
+    "tn": 483,
+    "sensitivity": 0.6075,
+    "specificity": 0.9738,
+    "accuracy": 0.9088,
+    "precision_ppv": 0.8333,
+    "npv": 0.92,
+    "f1": 0.7027
+  },
+  "latency_ms": {
+    "mean": 8.97,
+    "p50": 8.58,
+    "p95": 13.34
+  },
+  "n_images": 603,
+  "n_positive": 107,
+  "n_negative": 496,
+  "n_skipped_undecodable": 9,
+  "skipped_files": [
+    "IMG0004029.jpg",
+    "IMG0004098.jpg",
+    "IMG0004100.jpg",
+    "IMG0004143.jpg",
+    "IMG0004154.jpg",
+    "IMG0004177.jpg",
+    "IMG0004275.jpg",
+    "IMG0004290.jpg",
+    "IMG0004347.jpg"
+  ]
+}
