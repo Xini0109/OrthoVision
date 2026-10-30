@@ -1,0 +1,220 @@
+{
+  "split": "val",
+  "n_images": 607,
+  "n_skipped_undecodable": 6,
+  "n_positive": 108,
+  "n_negative": 499,
+  "selection_rule": "max image-level F1 on the validation split",
+  "selected_threshold": 0.15,
+  "selected": {
+    "threshold": 0.15,
+    "sensitivity": 0.6019,
+    "specificity": 0.978,
+    "precision": 0.8553,
+    "f1": 0.7065,
+    "tp": 65,
+    "fp": 11,
+    "fn": 43,
+    "tn": 488
+  },
+  "sweep": [
+    {
+      "threshold": 0.05,
+      "sensitivity": 0.7037,
+      "specificity": 0.9158,
+      "precision": 0.6441,
+      "f1": 0.6726,
+      "tp": 76,
+      "fp": 42,
+      "fn": 32,
+      "tn": 457
+    },
+    {
+      "threshold": 0.1,
+      "sensitivity": 0.6296,
+      "specificity": 0.9599,
+      "precision": 0.7727,
+      "f1": 0.6939,
+      "tp": 68,
+      "fp": 20,
+      "fn": 40,
+      "tn": 479
+    },
+    {
+      "threshold": 0.15,
+      "sensitivity": 0.6019,
+      "specificity": 0.978,
+      "precision": 0.8553,
+      "f1": 0.7065,
+      "tp": 65,
+      "fp": 11,
+      "fn": 43,
+      "tn": 488
+    },
+    {
+      "threshold": 0.2,
+      "sensitivity": 0.5556,
+      "specificity": 0.984,
+      "precision": 0.8824,
+      "f1": 0.6818,
+      "tp": 60,
+      "fp": 8,
+      "fn": 48,
+      "tn": 491
+    },
+    {
+      "threshold": 0.25,
+      "sensitivity": 0.5093,
+      "specificity": 0.986,
+      "precision": 0.8871,
+      "f1": 0.6471,
+      "tp": 55,
+      "fp": 7,
+      "fn": 53,
+      "tn": 492
+    },
+    {
+      "threshold": 0.3,
+      "sensitivity": 0.5,
+      "specificity": 0.992,
+      "precision": 0.931,
+      "f1": 0.6506,
+      "tp": 54,
+      "fp": 4,
+      "fn": 54,
+      "tn": 495
+    },
+    {
+      "threshold": 0.35,
+      "sensitivity": 0.463,
+      "specificity": 0.994,
+      "precision": 0.9434,
+      "f1": 0.6211,
+      "tp": 50,
+      "fp": 3,
+      "fn": 58,
+      "tn": 496
+    },
+    {
+      "threshold": 0.4,
+      "sensitivity": 0.3704,
+      "specificity": 0.996,
+      "precision": 0.9524,
+      "f1": 0.5333,
+      "tp": 40,
+      "fp": 2,
+      "fn": 68,
+      "tn": 497
+    },
+    {
+      "threshold": 0.45,
+      "sensitivity": 0.3241,
+      "specificity": 0.996,
+      "precision": 0.9459,
+      "f1": 0.4828,
+      "tp": 35,
+      "fp": 2,
+      "fn": 73,
+      "tn": 497
+    },
+    {
+      "threshold": 0.5,
+      "sensitivity": 0.2778,
+      "specificity": 0.998,
+      "precision": 0.9677,
+      "f1": 0.4317,
+      "tp": 30,
+      "fp": 1,
+      "fn": 78,
+      "tn": 498
+    },
+    {
+      "threshold": 0.55,
+      "sensitivity": 0.2407,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1": 0.3881,
+      "tp": 26,
+      "fp": 0,
+      "fn": 82,
+      "tn": 499
+    },
+    {
+      "threshold": 0.6,
+      "sensitivity": 0.2037,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1": 0.3385,
+      "tp": 22,
+      "fp": 0,
+      "fn": 86,
+      "tn": 499
+    },
+    {
+      "threshold": 0.65,
+      "sensitivity": 0.1111,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1": 0.2,
+      "tp": 12,
+      "fp": 0,
+      "fn": 96,
+      "tn": 499
+    },
+    {
+      "threshold": 0.7,
+      "sensitivity": 0.0926,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1": 0.1695,
+      "tp": 10,
+      "fp": 0,
+      "fn": 98,
+      "tn": 499
+    },
+    {
+      "threshold": 0.75,
+      "sensitivity": 0.0556,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1": 0.1053,
+      "tp": 6,
+      "fp": 0,
+      "fn": 102,
+      "tn": 499
+    },
+    {
+      "threshold": 0.8,
+      "sensitivity": 0.0185,
+      "specificity": 1.0,
+      "precision": 1.0,
+      "f1": 0.0364,
+      "tp": 2,
+      "fp": 0,
+      "fn": 106,
+      "tn": 499
+    },
+    {
+      "threshold": 0.85,
+      "sensitivity": 0.0,
+      "specificity": 1.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 108,
+      "tn": 499
+    },
+    {
+      "threshold": 0.9,
+      "sensitivity": 0.0,
+      "specificity": 1.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 108,
+      "tn": 499
+    }
+  ]
+}
