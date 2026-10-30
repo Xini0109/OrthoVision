@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it and the FracAtlas dataset."
+title: "OrthoVision: Orthopedic X-ray Fracture Detection and Explainable Analysis"
+abstract: >-
+  A course research prototype that detects suspected fracture regions on
+  musculoskeletal radiographs with a YOLO11-S detector fine-tuned on FracAtlas,
+  visualises feature-attribution maps (Eigen-CAM / Grad-CAM), and reports
+  reproducible test-set metrics, error cases and image-degradation sensitivity.
+  Not for clinical use.
+authors:
+  - family-names: "陈"
+    given-names: "芯芯"
+    affiliation: "24级人工智能一班 · 医学人工智能导论课程"
+version: 1.0.0
+date-released: "2026-10-29"
+license: MIT
+references:
+  - type: article
+    title: "FracAtlas: A Dataset for Fracture Classification, Localization and Segmentation of Musculoskeletal Radiographs"
+    authors:
+      - family-names: "Abedeen"
+        given-names: "Iftekharul"
+      - family-names: "Rahman"
+        given-names: "Md. Ashiqur"
+      - family-names: "Prottyasha"
+        given-names: "Fatema Zohra"
+      - family-names: "Ahmed"
+        given-names: "Tasnim"
+      - family-names: "Chowdhury"
+        given-names: "Tareque Mohmud"
+      - family-names: "Shatabda"
+        given-names: "Swakkhar"
+    journal: "Data in Brief"
+    volume: 51
+    start: 109684
+    year: 2023
+    doi: "10.1016/j.dib.2023.109684"
