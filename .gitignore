@@ -1,0 +1,22 @@
+# datasets and weights are not tracked (see README for how to obtain them)
+data/
+weights/
+*.pt
+
+# training artefacts
+results/train/
+results/val/
+runs/
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# keep small evidence files tracked
+!results/*.json
+!results/*.csv
+!results/figures/*.png
