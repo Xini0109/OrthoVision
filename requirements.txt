@@ -1,0 +1,15 @@
+# Python 3.11 recommended (tested on 3.11 + CUDA 12.6 build of PyTorch)
+#
+# Install PyTorch for your platform first, e.g.:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+# (the plain PyPI wheel on Windows is CPU-only and is too slow for training)
+torch>=2.4
+torchvision>=0.19
+ultralytics>=8.3.0
+streamlit>=1.36
+plotly>=5.20
+pandas>=2.0
+numpy>=1.26
+opencv-python>=4.9
+pillow>=10.0
+matplotlib>=3.8
