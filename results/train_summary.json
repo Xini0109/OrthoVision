@@ -1,0 +1,29 @@
+{
+  "args": {
+    "data": "D:\\医学人工智能\\project\\OrthoVision\\data\\fracatlas_yolo\\data.yaml",
+    "model": "yolo11s.pt",
+    "epochs": 80,
+    "batch": 16,
+    "imgsz": 640,
+    "device": "0",
+    "workers": 4,
+    "patience": 20,
+    "seed": 42,
+    "name": "orthovision_yolo11s"
+  },
+  "epochs_completed": 80,
+  "best_epoch": 64,
+  "best_val_mAP50": 0.3954,
+  "final": {
+    "train/box_loss": "1.45908",
+    "train/cls_loss": "1.23619",
+    "train/dfl_loss": "1.26306",
+    "metrics/precision(B)": "0.49947",
+    "metrics/recall(B)": "0.3985",
+    "metrics/mAP50(B)": "0.37406",
+    "metrics/mAP50-95(B)": "0.14689",
+    "val/box_loss": "2.46439",
+    "val/cls_loss": "2.70212",
+    "val/dfl_loss": "1.99807"
+  }
+}
