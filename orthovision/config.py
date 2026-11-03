@@ -31,6 +31,7 @@ DEFAULT_IOU = 0.45
 DEFAULT_DEVICE = os.environ.get("ORTHOVISION_DEVICE", "cuda:0")
 
 CLASS_NAMES_ZH = {
+    "fractured": "骨折",
     "fracture": "骨折",
     "hardware": "内固定物",
 }
