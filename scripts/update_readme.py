@@ -9,7 +9,8 @@ import json
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-MARKER = "<!-- RESULTS_TABLE -->"
+START = "<!-- RESULTS_TABLE -->"
+END = "<!-- /RESULTS_TABLE -->"
 
 
 def main() -> None:
@@ -24,7 +25,8 @@ def main() -> None:
     il = d.get("image_level", {})
     lat = d.get("latency_ms", {})
 
-    table = f"""| 指标 | 数值 | 说明 |
+    table = f"""{START}
+| 指标 | 数值 | 说明 |
 | --- | --- | --- |
 | mAP@0.5 | **{cm.get('mAP50')}** | COCO 协议 |
 | mAP@0.5:0.95 | {cm.get('mAP50_95')} | 定位精度更严格 |
@@ -39,12 +41,13 @@ def main() -> None:
 
 测试集规模：{d.get('n_images')} 张（含骨折 {d.get('n_positive')} / 无骨折 {d.get('n_negative')}）。
 运行环境：PyTorch {d.get('torch')}，{d.get('gpu')}。
-"""
+{END}"""
 
     text = readme.read_text(encoding="utf-8")
-    if MARKER not in text:
+    if START not in text or END not in text:
         raise SystemExit("README 中找不到结果表标记")
-    head, tail = text.split(MARKER, 1)
+    head, rest = text.split(START, 1)
+    _, tail = rest.split(END, 1)
     readme.write_text(head + table + tail, encoding="utf-8")
     print("README 结果表已更新")
 
