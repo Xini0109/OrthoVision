@@ -26,8 +26,8 @@
 | 版本 | `ultralytics>=8.3.0`（实际训练版本见 `results/eval_test.json` 或训练日志） |
 | 许可 | **AGPL-3.0** |
 | 本项目的使用方式 | 作为 Python 依赖调用；未修改其源码。 |
-| 初始权重 | `yolo11s.pt`（COCO 预训练），由 ultralytics 在首次运行时自动下载 |
-| 由此产生的约束 | 本项目训练得到的 `orthovision_yolo11s.pt` 属于 AGPL-3.0 的衍生作品，**按 AGPL-3.0 发布**；若需闭源商用，必须替换检测框架或取得 Ultralytics 商业授权。 |
+| 初始权重 | `yolo11s.pt`（主模型）与 `yolo11n.pt`（规模对比），均为 COCO 预训练，由 ultralytics 在首次运行时自动下载 |
+| 由此产生的约束 | 本项目训练得到的 `orthovision_yolo11s.pt` 与 `orthovision_yolo11n.pt` 属于 AGPL-3.0 的衍生作品，**按 AGPL-3.0 发布**；若需闭源商用，必须替换检测框架或取得 Ultralytics 商业授权。 |
 | 引用 | Jocher G., Qiu J., Chaurasia A. *Ultralytics YOLO* (2023–), https://github.com/ultralytics/ultralytics |
 
 ## 3. 论文 / 方法引用
