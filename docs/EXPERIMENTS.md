@@ -1,6 +1,15 @@
 # 实验设计与复现说明
 
-本文件说明三个实验的协议、命令与产物位置，保证任何人可以在同一份数据与代码上复现论文中的数字。
+本文件说明六个实验的协议、命令与产物位置，保证任何人可以在同一份数据与代码上复现论文中的数字。
+
+| 编号 | 实验 | 回答的问题 | 是否重训 |
+| --- | --- | --- | --- |
+| 1 | 基础检测效果 | 模型在独立测试集上能达到什么水平 | — |
+| 2 | 可解释性与错误案例 | 模型凭什么判断、在哪里失败 | 否 |
+| 3 | 图像质量扰动 | 影像质量下降时性能退化多快 | 否 |
+| 4 | 模型规模对比 | YOLO11n 与 YOLO11s 的精度/速度关系 | 是 |
+| 5 | 置信度阈值扫描 | 工作点如何在漏检与误检之间移动 | 否 |
+| 6 | 图像增强对比 | CLAHE 类预处理是否有稳定收益 | 否 |
 
 ## 0. 环境
 
@@ -37,7 +46,7 @@ python scripts/evaluate.py --split test --conf 0.25 --iou 0.45 --match-iou 0.5
 
 - `results/eval_test.json`：全部指标 + 运行环境
 - `results/per_image_test.csv`：逐图记录（GT 框数、预测框数、TP/FP/FN、耗时）
-- `results/figures/test_BoxPR_curve.png`、`test_confusion_matrix.png`
+- `results/figures/fig_pr_curve.png`、`fig_confusion_image_level_test.png`
 
 ## 2. 实验二：可解释性与错误案例
 
@@ -95,7 +104,74 @@ python scripts/perturbation_experiment.py --max-images 150 --no-map   # 快速�
 
 **解读约束**：合成扰动只能说明对*该变换*的敏感性，不能等同于真实成像条件差异。
 
-## 4. 结果一致性检查
+## 4. 实验四：模型规模对比（YOLO11n vs YOLO11s）
+
+**目的**：回答“在 FracAtlas 的数据规模下，缩小骨干能否以很小精度代价换取速度”。
+
+**协议**
+
+1. 两个模型使用**完全相同**的划分、增强策略、训练轮数（80）、种子（42）与测试流程。
+2. 在测试集上分别运行 `evaluate.py`，记录 mAP、框级 P/R/F1、图级敏感度/特异度。
+3. 用 `benchmark_latency.py` 在同一进程、同一批图像、预热后、CUDA 同步的条件下重测延迟，
+   避免评测时的其他负载把延迟读数搅乱。
+4. 汇总脚本读取两个 `eval_*.json`、延迟基准与训练日志，不手工填数。
+
+**命令**
+
+```bash
+python scripts/train.py --model weights/yolo11n_coco_pretrain.pt \
+    --epochs 80 --batch 16 --name orthovision_yolo11n
+python scripts/evaluate.py --weights weights/orthovision_yolo11n.pt \
+    --split test --tag test_yolo11n --conf 0.15
+python scripts/benchmark_latency.py --n 200
+python scripts/build_comparison.py
+```
+
+**产物**：`results/eval_test_yolo11n.json`、`results/latency_benchmark.json`、
+`results/model_comparison.json`、`results/figures/fig_model_comparison.png`
+
+## 5. 实验五：置信度阈值扫描
+
+**目的**：回答“工作点如何在漏检与误检之间移动”，并区分框级与图级口径。
+
+**协议**
+
+1. 以 `conf=0.01` 在测试集上推理一次，缓存全部候选框。
+2. 离线扫描 0.05–0.90 共 18 个阈值，逐阈值重新做 IoU≥0.5 的贪心匹配。
+3. 同时报告框级 Precision/Recall/F1 与图级敏感度/特异度/F1。
+4. 论文报告点取 0.10、0.15（val 选定工作点）与 0.25/0.40/0.50/0.60/0.75。
+
+**命令**
+
+```bash
+python scripts/threshold_experiment.py --split test --tag test
+```
+
+**产物**：`results/threshold_experiment_test.json`、`.csv`、`results/figures/fig_threshold_test.png`
+
+**解读约束**：mAP 由 PR 曲线积分得到，与固定阈值下的 P/R 不是同一口径。
+
+## 6. 实验六：图像增强对比
+
+**目的**：回答“CLAHE 类预处理是否真的改善检测”。
+
+**协议**
+
+1. 同一权重、同一测试集、同一阈值（0.15），只改变推理输入。
+2. 三种条件：原图、CLAHE（clip=2.0）、CLAHE+轻度锐化（0.6）。
+3. 每种条件重新推理并计算框级与图级指标。
+
+**命令**
+
+```bash
+python scripts/enhancement_experiment.py --split test
+```
+
+**产物**：`results/enhancement_test.json`、`results/figures/fig_enhancement.png`
+
+**解读约束**：增强只作用于推理输入，不等同于重新训练或数据增强。
+
+## 7. 结果一致性检查
 
 论文中的每一个数字都来自 `results/` 下的文件；`paper/build_paper.py` 在生成文档时直接读取这些 JSON。
-若重新训练模型，只需重新运行上述三条命令并重新生成论文，数字会自动同步。
+若重新训练模型，只需重新运行上述评测脚本并重新生成论文，数字会自动同步。
