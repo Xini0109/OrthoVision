@@ -6,6 +6,7 @@ weights/
 # training artefacts
 results/train/
 results/val/
+results/*.log
 runs/
 
 __pycache__/
