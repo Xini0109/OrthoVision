@@ -71,7 +71,11 @@ def main() -> None:
     best = run_dir / "weights" / "best.pt"
     out_dir = REPO / "weights"
     out_dir.mkdir(exist_ok=True)
-    target = out_dir / "orthovision_yolo11s.pt"
+    # Default run keeps the historical name; additional runs (e.g. YOLO11n
+    # for the model-size comparison) get their own file so the main
+    # checkpoint is never overwritten by a side experiment.
+    is_main = args.name == "orthovision_yolo11s"
+    target = out_dir / ("orthovision_yolo11s.pt" if is_main else f"{args.name}.pt")
     if best.exists():
         import shutil
         shutil.copy2(best, target)
@@ -99,14 +103,17 @@ def main() -> None:
             last = rows[-1]
             summary["final"] = {k: last[k] for k in last
                                 if k and ("metrics/" in k or "loss" in k)}
-    (REPO / "results" / "train_summary.json").write_text(
+    summary_name = ("train_summary.json" if is_main
+                    else f"train_summary_{args.name}.json")
+    (REPO / "results" / summary_name).write_text(
         json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
 
     fig_src = run_dir / "results.png"
     if fig_src.exists():
         (REPO / "results" / "figures").mkdir(parents=True, exist_ok=True)
         import shutil
-        shutil.copy2(fig_src, REPO / "results" / "figures" / "train_curves.png")
+        fig_name = "train_curves.png" if is_main else f"train_curves_{args.name}.png"
+        shutil.copy2(fig_src, REPO / "results" / "figures" / fig_name)
 
     print("训练完成")
 
