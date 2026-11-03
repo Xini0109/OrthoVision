@@ -1,0 +1,73 @@
+{
+  "weights": "D:\\医学人工智能\\project\\OrthoVision\\weights\\orthovision_yolo11s.pt",
+  "split": "test",
+  "conf": 0.15,
+  "imgsz": 640,
+  "match_iou": 0.5,
+  "n_images": 603,
+  "n_positive": 107,
+  "n_negative": 496,
+  "n_skipped_undecodable": 9,
+  "conditions": {
+    "original": {
+      "box": {
+        "tp": 51,
+        "fp": 63,
+        "fn": 76,
+        "precision": 0.4474,
+        "recall": 0.4016,
+        "f1": 0.4232
+      },
+      "image_level": {
+        "sensitivity": 0.6075,
+        "specificity": 0.9738,
+        "accuracy": 0.9088,
+        "precision_ppv": 0.8333
+      },
+      "latency_ms": {
+        "mean": 27.26,
+        "p50": 22.94
+      }
+    },
+    "clahe": {
+      "box": {
+        "tp": 42,
+        "fp": 85,
+        "fn": 85,
+        "precision": 0.3307,
+        "recall": 0.3307,
+        "f1": 0.3307
+      },
+      "image_level": {
+        "sensitivity": 0.5701,
+        "specificity": 0.9516,
+        "accuracy": 0.8839,
+        "precision_ppv": 0.7176
+      },
+      "latency_ms": {
+        "mean": 23.1,
+        "p50": 20.45
+      }
+    },
+    "clahe_sharpen": {
+      "box": {
+        "tp": 32,
+        "fp": 70,
+        "fn": 95,
+        "precision": 0.3137,
+        "recall": 0.252,
+        "f1": 0.2795
+      },
+      "image_level": {
+        "sensitivity": 0.4299,
+        "specificity": 0.9335,
+        "accuracy": 0.8441,
+        "precision_ppv": 0.5823
+      },
+      "latency_ms": {
+        "mean": 23.23,
+        "p50": 20.47
+      }
+    }
+  }
+}
