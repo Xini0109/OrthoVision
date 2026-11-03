@@ -1,0 +1,531 @@
+{
+  "weights": "D:\\医学人工智能\\project\\OrthoVision\\weights\\orthovision_yolo11s.pt",
+  "split": "test",
+  "imgsz": 640,
+  "device": "cuda:0",
+  "match_iou": 0.5,
+  "n_images": 603,
+  "n_positive": 107,
+  "n_negative": 496,
+  "n_skipped_undecodable": 9,
+  "skipped_files": [
+    "IMG0004029.jpg",
+    "IMG0004098.jpg",
+    "IMG0004100.jpg",
+    "IMG0004143.jpg",
+    "IMG0004154.jpg",
+    "IMG0004177.jpg",
+    "IMG0004275.jpg",
+    "IMG0004290.jpg",
+    "IMG0004347.jpg"
+  ],
+  "latency_ms": {
+    "mean": 19.24,
+    "p50": 14.56,
+    "p95": 50.19
+  },
+  "report_points": [
+    {
+      "threshold": 0.1,
+      "box": {
+        "tp": 54,
+        "fp": 95,
+        "fn": 73,
+        "precision": 0.3624,
+        "recall": 0.4252,
+        "f1": 0.3913
+      },
+      "image": {
+        "tp": 72,
+        "fp": 24,
+        "fn": 35,
+        "tn": 472,
+        "sensitivity": 0.6729,
+        "specificity": 0.9516,
+        "f1": 0.7094
+      }
+    },
+    {
+      "threshold": 0.15,
+      "box": {
+        "tp": 51,
+        "fp": 63,
+        "fn": 76,
+        "precision": 0.4474,
+        "recall": 0.4016,
+        "f1": 0.4232
+      },
+      "image": {
+        "tp": 65,
+        "fp": 13,
+        "fn": 42,
+        "tn": 483,
+        "sensitivity": 0.6075,
+        "specificity": 0.9738,
+        "f1": 0.7027
+      }
+    },
+    {
+      "threshold": 0.25,
+      "box": {
+        "tp": 47,
+        "fp": 39,
+        "fn": 80,
+        "precision": 0.5465,
+        "recall": 0.3701,
+        "f1": 0.4413
+      },
+      "image": {
+        "tp": 58,
+        "fp": 7,
+        "fn": 49,
+        "tn": 489,
+        "sensitivity": 0.5421,
+        "specificity": 0.9859,
+        "f1": 0.6744
+      }
+    },
+    {
+      "threshold": 0.4,
+      "box": {
+        "tp": 41,
+        "fp": 23,
+        "fn": 86,
+        "precision": 0.6406,
+        "recall": 0.3228,
+        "f1": 0.4293
+      },
+      "image": {
+        "tp": 49,
+        "fp": 4,
+        "fn": 58,
+        "tn": 492,
+        "sensitivity": 0.4579,
+        "specificity": 0.9919,
+        "f1": 0.6125
+      }
+    },
+    {
+      "threshold": 0.5,
+      "box": {
+        "tp": 30,
+        "fp": 13,
+        "fn": 97,
+        "precision": 0.6977,
+        "recall": 0.2362,
+        "f1": 0.3529
+      },
+      "image": {
+        "tp": 35,
+        "fp": 3,
+        "fn": 72,
+        "tn": 493,
+        "sensitivity": 0.3271,
+        "specificity": 0.994,
+        "f1": 0.4828
+      }
+    },
+    {
+      "threshold": 0.6,
+      "box": {
+        "tp": 25,
+        "fp": 5,
+        "fn": 102,
+        "precision": 0.8333,
+        "recall": 0.1969,
+        "f1": 0.3185
+      },
+      "image": {
+        "tp": 27,
+        "fp": 2,
+        "fn": 80,
+        "tn": 494,
+        "sensitivity": 0.2523,
+        "specificity": 0.996,
+        "f1": 0.3971
+      }
+    },
+    {
+      "threshold": 0.75,
+      "box": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 118,
+        "precision": 1.0,
+        "recall": 0.0709,
+        "f1": 0.1324
+      },
+      "image": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 98,
+        "tn": 496,
+        "sensitivity": 0.0841,
+        "specificity": 1.0,
+        "f1": 0.1552
+      }
+    }
+  ],
+  "sweep": [
+    {
+      "threshold": 0.05,
+      "box": {
+        "tp": 57,
+        "fp": 173,
+        "fn": 70,
+        "precision": 0.2478,
+        "recall": 0.4488,
+        "f1": 0.3193
+      },
+      "image": {
+        "tp": 80,
+        "fp": 47,
+        "fn": 27,
+        "tn": 449,
+        "sensitivity": 0.7477,
+        "specificity": 0.9052,
+        "f1": 0.6838
+      }
+    },
+    {
+      "threshold": 0.1,
+      "box": {
+        "tp": 54,
+        "fp": 95,
+        "fn": 73,
+        "precision": 0.3624,
+        "recall": 0.4252,
+        "f1": 0.3913
+      },
+      "image": {
+        "tp": 72,
+        "fp": 24,
+        "fn": 35,
+        "tn": 472,
+        "sensitivity": 0.6729,
+        "specificity": 0.9516,
+        "f1": 0.7094
+      }
+    },
+    {
+      "threshold": 0.15,
+      "box": {
+        "tp": 51,
+        "fp": 63,
+        "fn": 76,
+        "precision": 0.4474,
+        "recall": 0.4016,
+        "f1": 0.4232
+      },
+      "image": {
+        "tp": 65,
+        "fp": 13,
+        "fn": 42,
+        "tn": 483,
+        "sensitivity": 0.6075,
+        "specificity": 0.9738,
+        "f1": 0.7027
+      }
+    },
+    {
+      "threshold": 0.2,
+      "box": {
+        "tp": 49,
+        "fp": 47,
+        "fn": 78,
+        "precision": 0.5104,
+        "recall": 0.3858,
+        "f1": 0.4395
+      },
+      "image": {
+        "tp": 62,
+        "fp": 7,
+        "fn": 45,
+        "tn": 489,
+        "sensitivity": 0.5794,
+        "specificity": 0.9859,
+        "f1": 0.7045
+      }
+    },
+    {
+      "threshold": 0.25,
+      "box": {
+        "tp": 47,
+        "fp": 39,
+        "fn": 80,
+        "precision": 0.5465,
+        "recall": 0.3701,
+        "f1": 0.4413
+      },
+      "image": {
+        "tp": 58,
+        "fp": 7,
+        "fn": 49,
+        "tn": 489,
+        "sensitivity": 0.5421,
+        "specificity": 0.9859,
+        "f1": 0.6744
+      }
+    },
+    {
+      "threshold": 0.3,
+      "box": {
+        "tp": 45,
+        "fp": 32,
+        "fn": 82,
+        "precision": 0.5844,
+        "recall": 0.3543,
+        "f1": 0.4412
+      },
+      "image": {
+        "tp": 56,
+        "fp": 6,
+        "fn": 51,
+        "tn": 490,
+        "sensitivity": 0.5234,
+        "specificity": 0.9879,
+        "f1": 0.6627
+      }
+    },
+    {
+      "threshold": 0.35,
+      "box": {
+        "tp": 43,
+        "fp": 29,
+        "fn": 84,
+        "precision": 0.5972,
+        "recall": 0.3386,
+        "f1": 0.4322
+      },
+      "image": {
+        "tp": 54,
+        "fp": 6,
+        "fn": 53,
+        "tn": 490,
+        "sensitivity": 0.5047,
+        "specificity": 0.9879,
+        "f1": 0.6467
+      }
+    },
+    {
+      "threshold": 0.4,
+      "box": {
+        "tp": 41,
+        "fp": 23,
+        "fn": 86,
+        "precision": 0.6406,
+        "recall": 0.3228,
+        "f1": 0.4293
+      },
+      "image": {
+        "tp": 49,
+        "fp": 4,
+        "fn": 58,
+        "tn": 492,
+        "sensitivity": 0.4579,
+        "specificity": 0.9919,
+        "f1": 0.6125
+      }
+    },
+    {
+      "threshold": 0.45,
+      "box": {
+        "tp": 37,
+        "fp": 16,
+        "fn": 90,
+        "precision": 0.6981,
+        "recall": 0.2913,
+        "f1": 0.4111
+      },
+      "image": {
+        "tp": 43,
+        "fp": 3,
+        "fn": 64,
+        "tn": 493,
+        "sensitivity": 0.4019,
+        "specificity": 0.994,
+        "f1": 0.5621
+      }
+    },
+    {
+      "threshold": 0.5,
+      "box": {
+        "tp": 30,
+        "fp": 13,
+        "fn": 97,
+        "precision": 0.6977,
+        "recall": 0.2362,
+        "f1": 0.3529
+      },
+      "image": {
+        "tp": 35,
+        "fp": 3,
+        "fn": 72,
+        "tn": 493,
+        "sensitivity": 0.3271,
+        "specificity": 0.994,
+        "f1": 0.4828
+      }
+    },
+    {
+      "threshold": 0.55,
+      "box": {
+        "tp": 26,
+        "fp": 8,
+        "fn": 101,
+        "precision": 0.7647,
+        "recall": 0.2047,
+        "f1": 0.323
+      },
+      "image": {
+        "tp": 31,
+        "fp": 2,
+        "fn": 76,
+        "tn": 494,
+        "sensitivity": 0.2897,
+        "specificity": 0.996,
+        "f1": 0.4429
+      }
+    },
+    {
+      "threshold": 0.6,
+      "box": {
+        "tp": 25,
+        "fp": 5,
+        "fn": 102,
+        "precision": 0.8333,
+        "recall": 0.1969,
+        "f1": 0.3185
+      },
+      "image": {
+        "tp": 27,
+        "fp": 2,
+        "fn": 80,
+        "tn": 494,
+        "sensitivity": 0.2523,
+        "specificity": 0.996,
+        "f1": 0.3971
+      }
+    },
+    {
+      "threshold": 0.65,
+      "box": {
+        "tp": 21,
+        "fp": 3,
+        "fn": 106,
+        "precision": 0.875,
+        "recall": 0.1654,
+        "f1": 0.2781
+      },
+      "image": {
+        "tp": 23,
+        "fp": 1,
+        "fn": 84,
+        "tn": 495,
+        "sensitivity": 0.215,
+        "specificity": 0.998,
+        "f1": 0.3511
+      }
+    },
+    {
+      "threshold": 0.7,
+      "box": {
+        "tp": 14,
+        "fp": 1,
+        "fn": 113,
+        "precision": 0.9333,
+        "recall": 0.1102,
+        "f1": 0.1972
+      },
+      "image": {
+        "tp": 14,
+        "fp": 1,
+        "fn": 93,
+        "tn": 495,
+        "sensitivity": 0.1308,
+        "specificity": 0.998,
+        "f1": 0.2295
+      }
+    },
+    {
+      "threshold": 0.75,
+      "box": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 118,
+        "precision": 1.0,
+        "recall": 0.0709,
+        "f1": 0.1324
+      },
+      "image": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 98,
+        "tn": 496,
+        "sensitivity": 0.0841,
+        "specificity": 1.0,
+        "f1": 0.1552
+      }
+    },
+    {
+      "threshold": 0.8,
+      "box": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 122,
+        "precision": 1.0,
+        "recall": 0.0394,
+        "f1": 0.0758
+      },
+      "image": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 102,
+        "tn": 496,
+        "sensitivity": 0.0467,
+        "specificity": 1.0,
+        "f1": 0.0893
+      }
+    },
+    {
+      "threshold": 0.85,
+      "box": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 125,
+        "precision": 1.0,
+        "recall": 0.0157,
+        "f1": 0.031
+      },
+      "image": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 105,
+        "tn": 496,
+        "sensitivity": 0.0187,
+        "specificity": 1.0,
+        "f1": 0.0367
+      }
+    },
+    {
+      "threshold": 0.9,
+      "box": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 126,
+        "precision": 1.0,
+        "recall": 0.0079,
+        "f1": 0.0156
+      },
+      "image": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 106,
+        "tn": 496,
+        "sensitivity": 0.0093,
+        "specificity": 1.0,
+        "f1": 0.0185
+      }
+    }
+  ]
+}
