@@ -149,6 +149,48 @@ def main() -> None:
         for r in results:
             writer.writerow(r.to_dict())
 
+    # image-level confusion matrix, tagged so several checkpoints can be compared
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        import numpy as np
+        plt.rcParams.update({
+            "font.sans-serif": ["Microsoft YaHei", "SimHei", "DejaVu Sans"],
+            "font.family": "sans-serif", "axes.unicode_minus": False,
+        })
+        c = {"TP": 0, "FP": 0, "FN": 0, "TN": 0}
+        for r in results:
+            c[r.outcome] += 1
+        mat = np.array([[c["TP"], c["FN"]], [c["FP"], c["TN"]]])
+        row_tot = mat.sum(axis=1, keepdims=True)
+        fig, ax = plt.subplots(figsize=(5.0, 4.2), dpi=220)
+        ax.imshow(mat, cmap="Blues", vmin=0, vmax=mat.max() * 1.15)
+        for i in range(2):
+            for j in range(2):
+                v = mat[i, j]
+                share = v / row_tot[i, 0] * 100 if row_tot[i, 0] else 0
+                color = "white" if v > mat.max() * 0.55 else "#0f172a"
+                ax.text(j, i - 0.08, f"{v}", ha="center", va="center",
+                        fontsize=20, color=color, fontweight="bold")
+                ax.text(j, i + 0.22, f"{share:.1f}%", ha="center", va="center",
+                        fontsize=9, color=color)
+        ax.set_xticks([0, 1], ["检出阳性", "未检出"])
+        ax.set_yticks([0, 1], ["实际有骨折", "实际无骨折"])
+        ax.set_xlabel("模型判定")
+        ax.set_ylabel("金标准")
+        ax.set_title(f"图级混淆矩阵（{args.split}）", fontsize=11)
+        ax.tick_params(length=0)
+        for s in ax.spines.values():
+            s.set_visible(False)
+        fig.tight_layout()
+        (out_dir / "figures").mkdir(parents=True, exist_ok=True)
+        fig.savefig(out_dir / "figures" / f"fig_confusion_image_level_{tag}.png",
+                    facecolor="white")
+        plt.close(fig)
+    except Exception as exc:
+        print(f"[warn] 混淆矩阵绘图失败：{exc}")
+
     print(json.dumps(payload, indent=2, ensure_ascii=False))
 
 
