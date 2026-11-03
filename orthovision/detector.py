@@ -33,8 +33,8 @@ class Detection:
 
     @property
     def label(self) -> str:
-        """ASCII label used for OpenCV drawing."""
-        return self.cls_name
+        """ASCII label used for OpenCV drawing (cv2 cannot render Chinese)."""
+        return "Fracture" if self.cls_name in ("fractured", "fracture") else self.cls_name
 
     @property
     def label_zh(self) -> str:
