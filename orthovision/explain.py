@@ -145,8 +145,15 @@ def eigen_cam(detector, image_rgb: np.ndarray, imgsz: int = 640,
         # First principal component without the full SVD cost on tiny matrices.
         u, s, vt = np.linalg.svd(mat, full_matrices=False)
         cam = vt[0].reshape(h, w)
-        if cam.sum() < 0:
+        # The first principal component has an arbitrary sign. Choosing it by
+        # the raw sum fails when the map is dominated by a flat background:
+        # the background then normalises to 1 and the heat-map turns into a
+        # uniform block. Pick the sign so the *extreme tail* (the focal
+        # response) is positive, then ReLU away the background offset.
+        med = float(np.median(cam))
+        if abs(float(cam.min()) - med) > abs(float(cam.max()) - med):
             cam = -cam
+        cam = np.maximum(cam, 0.0)
         cam = _normalise(cam)
         cam = _crop_padding(cam, geom, image_rgb.shape[:2])
         return ExplainResult("EigenCAM", cam, feature_shape=(c, h, w))
