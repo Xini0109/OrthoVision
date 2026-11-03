@@ -1,0 +1,22 @@
+{
+  "imgsz": 640,
+  "conf": 0.15,
+  "device": "cuda:0",
+  "note": "back-to-back, warm-up 10 images, CUDA synchronised",
+  "models": {
+    "YOLO11n": {
+      "n": 200,
+      "mean_ms": 12.76,
+      "p50_ms": 11.97,
+      "p95_ms": 18.39,
+      "min_ms": 10.13
+    },
+    "YOLO11s": {
+      "n": 200,
+      "mean_ms": 12.7,
+      "p50_ms": 12.15,
+      "p95_ms": 17.31,
+      "min_ms": 10.01
+    }
+  }
+}
